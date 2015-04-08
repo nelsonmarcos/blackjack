@@ -8,3 +8,12 @@ class Blackjack(object):
 
     def current_state(self):
         return self.state
+
+class Card(object):
+    def __init__(self, suit, rank):
+        self.suit = suit
+        self.rank = rank
+
+class Deck(object):
+    def get_card(self):
+        return Card('C', '2')
