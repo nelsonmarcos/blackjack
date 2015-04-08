@@ -27,7 +27,7 @@ class Deck(object):
 
     def get_card(self):
         card = self.cards[0]
-        self.cards[1:len(self.cards)]
+        self.cards = self.cards[1:len(self.cards)]
         return card
 
     def get_size(self):
