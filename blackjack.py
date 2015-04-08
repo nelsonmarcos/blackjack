@@ -12,8 +12,8 @@ class Blackjack(object):
     def __init__(self):
         self.options = "\n[1] Hit\n[2] Stand\n"
         self.deck = Deck()
-        self.player = []
-        self.dealer = []
+        self.player = [self.deck.get_card(), self.deck.get_card()]
+        self.dealer = [self.deck.get_card(), self.deck.get_card()]
 
     def evaluate_player_input(self):
         pass
@@ -36,6 +36,9 @@ class Card(object):
 
     def get_str_card(self):
         return self.suit + self.rank
+
+    def __str__(self):
+        return self.get_str_card()
 
 
 class Deck(object):
