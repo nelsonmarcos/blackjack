@@ -1,5 +1,5 @@
 import unittest
-from blackjack import Blackjack
+from blackjack import Blackjack, Card, Deck, SUITS, RANKS
 
 class BlackJackTest(unittest.TestCase):
 
@@ -11,3 +11,21 @@ class BlackJackTest(unittest.TestCase):
     #     game = Blackjack()
     #     game.evaluate_input(1)
     #     self.assertEqual()
+
+
+class DeckTest(unittest.TestCase):
+    def testDrawCard(self):
+        deck = Deck()
+        self.assertEqual(52, deck.get_size())
+        card = deck.get_card()
+        self.assertEqual(51, deck.get_size())
+        self.assertFalse(deck.card_in_deck(card))
+
+    def testDeckSize(self):
+        deck = Deck()
+        self.assertEqual(52, deck.get_size())
+
+    def testCardInDeck(self):
+        card = Card('S', 'T')
+        deck = Deck()
+        self.assertTrue(deck.card_in_deck(card))
