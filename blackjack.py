@@ -1,5 +1,12 @@
 import random
 
+class Blackjack(object):
+    def __init__(self):
+        self.state="[1] Deal \n [2] Exit"
+
+    def current_state(self):
+        return self.state
+
 class Card(object):
     def __init__(self, suit, rank):
         self.suit = suit
