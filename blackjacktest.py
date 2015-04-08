@@ -1,16 +1,25 @@
+
 import unittest
-from blackjack import Blackjack, Card, Deck, SUITS, RANKS
+from blackjack import Blackjack, Card, Deck, Player, Dealer
+
 
 class BlackJackTest(unittest.TestCase):
 
-    def test_start_game_function_return_initial_state(self):
-        game = Blackjack()
-        self.assertEquals(game.get_current_state(), ("start", "[1] Deal \n [2] Exit"))
+    def setUp(self):
+        self.game = Blackjack()
 
-    # def test_validate_player_input_to_start_a_game(self):
-    #     game = Blackjack()
-    #     game.evaluate_input(1)
-    #     self.assertEqual()
+    def test_start_game_with_default_options(self):
+        self.assertEquals(self.game.options, "\n[1] Hit\n[2] Stand\n")
+
+    def test_start_game_initialize_a_deck(self):
+        self.assertIsInstance(self.game.deck, Deck)
+
+    def test_start_game_initialize_a_player_and_a_dealer(self):
+        self.assertIsInstance(self.game.player, Player)
+        self.assertIsInstance(self.game.dealer, Dealer)
+
+    # def test_start_game_initialize_a_player(self):
+    #     self.assertIsInstance(self.game.deck, Player)
 
 
 class DeckTest(unittest.TestCase):
