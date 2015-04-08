@@ -16,6 +16,9 @@ class Card(object):
         self.suit = suit
         self.rank = rank
 
+    def get_value(self):
+        return VALUES[self.rank]
+
 class Deck(object):
     def __init__(self):
         self.cards = []
