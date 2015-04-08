@@ -31,5 +31,14 @@ class Deck(object):
     def get_size(self):
         return len(self.cards)
 
+    def card_in_deck(self, card):
+        for carddeck in self.cards:
+            if card.rank == carddeck.rank and card.suit == carddeck.suit:
+                return True
+        return False
+
+
+
+
 class Player(object):
     pass
