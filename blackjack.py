@@ -2,7 +2,8 @@
 import random
 
 SUITS = ('C', 'S', 'H', 'D')
-RANKS = ('A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K')
+#RANKS = ('A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K')
+RANKS = ('2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K')
 VALUES = {'A':1, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, 'T':10, 'J':10, 'Q':10, 'K':10}
 
 
@@ -25,6 +26,9 @@ class Card(object):
 
     def get_value(self):
         return VALUES[self.rank]
+
+    def get_str_card(self):
+        return self.suit + self.rank
 
 
 class Deck(object):
@@ -57,6 +61,26 @@ class Player(object):
 
 class Dealer(object):
     pass
+
+
+def get_hand_total(hand):
+    total = 0
+    for card in hand:
+        total += card.get_value()
+    return total
+
+
+def show_winner(dealer_hand, player_hand):
+    dealer_total = get_hand_total(dealer_hand)
+    player_total = get_hand_total(player_hand)
+    if player_total > 21:
+        return "dealer"
+    elif dealer_total > 21:
+        return "player"
+    elif player_total > dealer_total:
+        return "player"
+    else:
+        return "dealer"
 
 
 # if __name__ == "__main__":
