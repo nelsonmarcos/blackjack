@@ -18,9 +18,15 @@ class Blackjack(object):
     def evaluate_player_input(self):
         pass
 
+    def print_hand(self, hand):
+        hand_str = ''
+        for card in hand:
+            hand_str += str(card) + ','
+        return hand_str
+
     def start(self):
-        print "dealer: %s\nplayer: %s\n%s" % (str(self.dealer),
-                                              str(self.player,),
+        print "dealer: %s\nplayer: %s\n%s" % (self.print_hand(self.dealer),
+                                              self.print_hand(self.player),
                                               self.options)
         playerInput = raw_input()
         self.evaluate_player_input(playerInput)
