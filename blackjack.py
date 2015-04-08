@@ -15,10 +15,16 @@ class Blackjack(object):
         self.player = [self.deck.get_card(), self.deck.get_card()]
         self.dealer = [self.deck.get_card(), self.deck.get_card()]
 
-    def evaluate_player_input(self):
-        pass
+    def evaluate_player_input(self, i):
+        if i == 1:
+            self.player.append(self.deck.get_card())
+
+        print "Winner: %s" % show_winner(self.dealer, self.player)
 
     def start(self):
+        self.current_game_state()
+
+    def current_game_state(self):
         print "dealer: %s\nplayer: %s\n%s" % (str(self.dealer),
                                               str(self.player,),
                                               self.options)
