@@ -26,7 +26,9 @@ class Deck(object):
         random.shuffle(self.cards)
 
     def get_card(self):
-        return Card('C', '2')
+        card = self.cards[0]
+        self.cards[1:len(self.cards)]
+        return card
 
     def get_size(self):
         return len(self.cards)
