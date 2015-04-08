@@ -67,10 +67,10 @@ def show_winner(dealer_hand, player_hand):
     dealer_total = get_hand_total(dealer_hand)
     player_total = get_hand_total(dealer_hand)
     if player_total > 21:
-        return "delaer"
+        return "dealer"
     elif dealer_total > 21:
         return "player"
     elif player_total > dealer_total:
         return "player"
     else:
-        return "delaer"
+        return "dealer"
