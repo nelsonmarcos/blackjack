@@ -12,11 +12,18 @@ class Blackjack(object):
     def __init__(self):
         self.options = "\n[1] Hit\n[2] Stand\n"
         self.deck = Deck()
-        self.player = Player()
-        self.dealer = Dealer()
+        self.player = []
+        self.dealer = []
 
     def evaluate_player_input(self):
         pass
+
+    def start(self):
+        print "dealer: %s\nplayer: %s\n%s" % (str(self.dealer),
+                                              str(self.player,),
+                                              self.options)
+        playerInput = raw_input()
+        self.evaluate_player_input(playerInput)
 
 
 class Card(object):
@@ -55,14 +62,6 @@ class Deck(object):
         return False
 
 
-class Player(object):
-    pass
-
-
-class Dealer(object):
-    pass
-
-
 def get_hand_total(hand):
     total = 0
     for card in hand:
@@ -83,6 +82,6 @@ def show_winner(dealer_hand, player_hand):
         return "dealer"
 
 
-# if __name__ == "__main__":
-#     game = Blackjack()
-#     game.start()
+if __name__ == "__main__":
+    game = Blackjack()
+    game.start()

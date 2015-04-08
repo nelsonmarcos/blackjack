@@ -1,6 +1,6 @@
 
 import unittest
-from blackjack import Blackjack, Card, Deck, Player, Dealer, get_hand_total, show_winner
+from blackjack import Blackjack, Card, Deck, get_hand_total, show_winner
 
 
 class BlackJackTest(unittest.TestCase):
@@ -15,8 +15,9 @@ class BlackJackTest(unittest.TestCase):
         self.assertIsInstance(self.game.deck, Deck)
 
     def test_start_game_initialize_a_player_and_a_dealer(self):
-        self.assertIsInstance(self.game.player, Player)
-        self.assertIsInstance(self.game.dealer, Dealer)
+        self.assertIsInstance(self.game.player, list)
+        self.assertIsInstance(self.game.dealer, list)
+
 
 
 
