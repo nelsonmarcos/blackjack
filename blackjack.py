@@ -25,7 +25,7 @@ class Card(object):
         return VALUES[self.rank]
 
     def get_str_card(self):
-        return self.suit + self.rank 
+        return self.suit + self.rank
 
 class Deck(object):
     def __init__(self):
@@ -55,3 +55,15 @@ class Deck(object):
 
 class Player(object):
     pass
+
+
+def get_hand_total(hand):
+    total = 0
+    for card in hand:
+        total += card.get_value()
+    return total
+
+def show_winner(dealer_hand, player_hand):
+    dealer_total = get_hand_total(dealer_hand)
+    player_total = get_hand_total(dealer_hand)
+    return "delaer"
