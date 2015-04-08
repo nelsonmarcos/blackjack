@@ -21,12 +21,18 @@ class Blackjack(object):
 
         print "Winner: %s" % show_winner(self.dealer, self.player)
 
+    def print_hand(self, hand):
+        hand_str = ''
+        for card in hand:
+            hand_str += str(card) + ','
+        return hand_str
+
     def start(self):
         self.current_game_state()
 
     def current_game_state(self):
-        print "dealer: %s\nplayer: %s\n%s" % (str(self.dealer),
-                                              str(self.player,),
+        print "dealer: %s\nplayer: %s\n%s" % (self.print_hand(self.dealer),
+                                              self.print_hand(self.player),
                                               self.options)
         playerInput = raw_input()
         self.evaluate_player_input(playerInput)
