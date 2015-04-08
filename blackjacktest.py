@@ -71,3 +71,7 @@ class DeckTest(unittest.TestCase):
         player = [Card('C', '2'), Card('C', '6')]
         dealer = [Card('S', '3'), Card('H', '5')]
         self.assertEqual("dealer", show_winner(dealer, player))
+
+    def testDisplayCard(self):
+        self.assertEqual("H5", Card('H', '5').get_str_card())
+        self.assertEqual("SJ", Card('S', 'J').get_str_card())
